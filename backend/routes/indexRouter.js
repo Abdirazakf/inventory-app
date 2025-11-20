@@ -2,6 +2,8 @@ const {Router} = require('express')
 const indexRouter = Router()
 const indexController = require('../controllers/indexController')
 
-indexRouter.get('/', indexController.gameListGet)
+indexRouter.get('/', (req, res) => {
+    res.send('Homepage')
+})
 
 module.exports = indexRouter
