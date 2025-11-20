@@ -1,10 +1,13 @@
 const express = require('express')
+const path = require('path')
 const app = express()
+const indexRouter = require('./routes/indexRouter')
 require('dotenv').config()
 
-app.get('/', (req, res) => {
-    res.send('Deployment is working!')
-})
+
+app.use(express.urlencoded({extended: true}))
+
+app.use('/', indexRouter)
 
 app.listen(process.env.PORT, (err) => {
     if (err){
