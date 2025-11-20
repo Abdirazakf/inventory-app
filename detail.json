@@ -1,227 +1,227 @@
 {
-  "id": 533545,
-  "name": "Assassin's Creed IV Black Flag",
-  "image": "https://img.gamebrain.co/games/784/assassins_creed_iv_black_flag_ubisoft_2013_6.png",
-  "gameplay": "https://www.youtube-nocookie.com/embed/EALGqjrktW8",
-  "link": "https://gamebrain.co/game/assassins-creed-4-black-flag",
-  "x_url": "https://twitter.com/assassinscreed",
-  "rating": {
-    "mean": 0.8499695,
-    "count": 22479,
-    "mean_players": 0.928,
-    "count_players": 68016,
-    "mean_critics": 0.878,
-    "count_critics": 26
-  },
-  "description": "This pack contains new locations to discover and explore: Sacrifice Island, Black Island and Mystery Island and exclusives costumes, pictures, titles, relics and emblems for multiplayer.",
-  "short_description": "Assassin's Creed IV Black Flag is a historical open-world game that transports players to the Caribbean in 1715, during the golden age of piracy. In this game, players can experience single-player, co-op, and multi-player modes as they join a lawless republic of pirates and navigate a world full of naval battles, plunder, and adventure. The game's immersive storyline is inspired by real historical events and brings to life the legends of legendary pirates, such as Blackbeard.",
-  "release_date": "2013-11-21",
-  "developer": "Ubisoft Montreal",
-  "playtime": {
-    "percentiles": [5, 10, 17, 25, 36, 48, 60, 85.5, 124, 9921],
-    "min": 1,
-    "median": 42,
-    "max": 9921,
-    "mean": 163.813793,
-    "mentions": 145
-  },
-  "platforms": [
-    {
-      "value": "playstation_3",
-      "name": "Playstation 3"
+    "id": 533545,
+    "name": "Assassin's Creed IV Black Flag",
+    "image": "https://img.gamebrain.co/games/784/assassins_creed_iv_black_flag_ubisoft_2013_6.png",
+    "gameplay": "https://www.youtube-nocookie.com/embed/EALGqjrktW8",
+    "link": "https://gamebrain.co/game/assassins-creed-4-black-flag",
+    "x_url": "https://twitter.com/assassinscreed",
+    "rating": {
+        "mean": 0.8499695,
+        "count": 22479,
+        "mean_players": 0.928,
+        "count_players": 68016,
+        "mean_critics": 0.878,
+        "count_critics": 26
     },
-    {
-      "value": "nintendo_switch",
-      "name": "Nintendo Switch"
+    "description": "This pack contains new locations to discover and explore: Sacrifice Island, Black Island and Mystery Island and exclusives costumes, pictures, titles, relics and emblems for multiplayer.",
+    "short_description": "Assassin's Creed IV Black Flag is a historical open-world game that transports players to the Caribbean in 1715, during the golden age of piracy. In this game, players can experience single-player, co-op, and multi-player modes as they join a lawless republic of pirates and navigate a world full of naval battles, plunder, and adventure. The game's immersive storyline is inspired by real historical events and brings to life the legends of legendary pirates, such as Blackbeard.",
+    "release_date": "2013-11-21",
+    "developer": "Ubisoft Montreal",
+    "playtime": {
+        "percentiles": [5, 10, 17, 25, 36, 48, 60, 85.5, 124, 9921],
+        "min": 1,
+        "median": 42,
+        "max": 9921,
+        "mean": 163.813793,
+        "mentions": 145
     },
-    {
-      "value": "xbox_360",
-      "name": "XBox 360"
-    },
-    {
-      "value": "playstation_5",
-      "name": "Playstation 5"
-    },
-    {
-      "value": "playstation_4",
-      "name": "Playstation 4"
-    },
-    {
-      "value": "x_box_cloud_gaming",
-      "name": "Xbox Cloud Gaming"
-    },
-    {
-      "value": "xbox",
-      "name": "XBox"
-    },
-    {
-      "value": "windows",
-      "name": "Windows"
-    },
-    {
-      "value": "playstation",
-      "name": "Playstation"
-    },
-    {
-      "value": "uplay",
-      "name": "UPlay"
-    },
-    {
-      "value": "xbox_series_xs",
-      "name": "Xbox Series X|S"
-    },
-    {
-      "value": "pc",
-      "name": "PC"
-    },
-    {
-      "value": "wii_u",
-      "name": "Wii U"
-    },
-    {
-      "value": "cloud_platform",
-      "name": "Cloud Platform"
-    },
-    {
-      "value": "wii",
-      "name": "Wii"
-    },
-    {
-      "value": "xbox_one",
-      "name": "XBox One"
-    }
-  ],
-  "tags": [
-    {
-      "value": "indie",
-      "name": "Indie"
-    }
-  ],
-  "genres": [
-    {
-      "value": "role_playing",
-      "name": "Role Playing"
-    },
-    {
-      "value": "open_world",
-      "name": "Open World"
-    },
-    {
-      "value": "casual",
-      "name": "Casual"
-    },
-    {
-      "value": "stealth",
-      "name": "Stealth"
-    },
-    {
-      "value": "sandbox",
-      "name": "Sandbox"
-    },
-    {
-      "value": "action",
-      "name": "Action"
-    },
-    {
-      "value": "adventure",
-      "name": "Adventure"
-    }
-  ],
-  "genre": "Open World Role Playing",
-  "themes": [
-    {
-      "value": "fantasy",
-      "name": "Fantasy"
-    },
-    {
-      "value": "historical",
-      "name": "Historical"
-    },
-    {
-      "value": "science_fiction",
-      "name": "Science Fiction"
-    }
-  ],
-  "adult_only": true,
-  "play_modes": [
-    {
-      "value": "co_op",
-      "name": "Co-Op"
-    },
-    {
-      "value": "single_player",
-      "name": "Single-Player"
-    },
-    {
-      "value": "two_players",
-      "name": "2-Players"
-    },
-    {
-      "value": "multiplayer",
-      "name": "Multi-Player"
-    }
-  ],
-  "screenshots": [
-    "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_44.jpg",
-    "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_22.jpg",
-    "https://img.gamebrain.co/games/831/assassins_creed_iv_black_flag_ubisoft_2013_18.jpg",
-    "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_25.jpg",
-    "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_15.jpg",
-    "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_33.png",
-    "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_23.jpg",
-    "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_14.jpg",
-    "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_24.jpg",
-    "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_46.jpg",
-    "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_19.jpg",
-    "https://img.gamebrain.co/games/837/assassins_creed_iv_black_flag_ubisoft_2013_69.jpg",
-    "https://img.gamebrain.co/games/825/assassins_creed_iv_black_flag_ubisoft_2013_21.jpg",
-    "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_16.jpg",
-    "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_17.jpg",
-    "https://img.gamebrain.co/games/836/assassins_creed_iv_black_flag_ubisoft_2013_86.jpg",
-    "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_40.jpg",
-    "https://img.gamebrain.co/games/824/assassins_creed_iv_black_flag_ubisoft_2013_20.jpg",
-    "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_70.jpg"
-  ],
-  "videos": [
-    "https://www.youtube-nocookie.com/embed/86K_j3ylA5g",
-    "https://www.youtube-nocookie.com/embed/g5dH2Sqe93Y",
-    "https://www.youtube-nocookie.com/embed/5Cwj1RQbOzM",
-    "https://www.youtube-nocookie.com/embed/hgEckOCOt_c",
-    "https://www.youtube-nocookie.com/embed/ap4FFmJK7q4",
-    "https://www.youtube-nocookie.com/embed/FqkmE_PVW3Y",
-    "https://www.youtube-nocookie.com/embed/qE8ayERHhD4",
-    "https://www.youtube-nocookie.com/embed/tqKyjEUCNG4",
-    "https://www.youtube-nocookie.com/embed/y2qkjlIdyWE",
-    "https://www.youtube-nocookie.com/embed/umzvBHbB-tk",
-    "https://www.youtube-nocookie.com/embed/sPYN9crIA38",
-    "https://www.youtube-nocookie.com/embed/EALGqjrktW8",
-    "https://www.youtube-nocookie.com/embed/efD7YeX8sl8",
-    "https://www.youtube-nocookie.com/embed/YIYjoIUxKxw",
-    "https://www.youtube-nocookie.com/embed/A4BcitbkZ5A",
-    "https://www.youtube-nocookie.com/embed/4Z9wnzlw9hA",
-    "https://www.youtube-nocookie.com/embed/OwVe4ZNeQZk"
-  ],
-  "offers": [
-    {
-      "price": {
-        "value": 29.99,
-        "currency": "USD"
-      },
-      "store_name": "playstation",
-      "platform": "PS4",
-      "title": "Assassin’s Creed IV Black Flag",
-      "url": "https://www.playstation.com/en-us/games/assassins-creed-iv-black-flag/"
-    }
-  ],
-  "official_stores": [
-    {
-      "source": "xbox",
-      "url": "https://www.xbox.com/en-US/games/store/assassins-creed-iv-black-flag/BRKMHZX1RCF2"
-    },
-    {
-      "source": "playstation",
-      "url": "https://www.playstation.com/en-us/games/assassins-creed-iv-black-flag/"
-    }
-  ],
-  "micro_trailer": null
+    "platforms": [
+        {
+            "value": "playstation_3",
+            "name": "Playstation 3"
+        },
+        {
+            "value": "nintendo_switch",
+            "name": "Nintendo Switch"
+        },
+        {
+            "value": "xbox_360",
+            "name": "XBox 360"
+        },
+        {
+            "value": "playstation_5",
+            "name": "Playstation 5"
+        },
+        {
+            "value": "playstation_4",
+            "name": "Playstation 4"
+        },
+        {
+            "value": "x_box_cloud_gaming",
+            "name": "Xbox Cloud Gaming"
+        },
+        {
+            "value": "xbox",
+            "name": "XBox"
+        },
+        {
+            "value": "windows",
+            "name": "Windows"
+        },
+        {
+            "value": "playstation",
+            "name": "Playstation"
+        },
+        {
+            "value": "uplay",
+            "name": "UPlay"
+        },
+        {
+            "value": "xbox_series_xs",
+            "name": "Xbox Series X|S"
+        },
+        {
+            "value": "pc",
+            "name": "PC"
+        },
+        {
+            "value": "wii_u",
+            "name": "Wii U"
+        },
+        {
+            "value": "cloud_platform",
+            "name": "Cloud Platform"
+        },
+        {
+            "value": "wii",
+            "name": "Wii"
+        },
+        {
+            "value": "xbox_one",
+            "name": "XBox One"
+        }
+    ],
+    "tags": [
+        {
+            "value": "indie",
+            "name": "Indie"
+        }
+    ],
+    "genres": [
+        {
+            "value": "role_playing",
+            "name": "Role Playing"
+        },
+        {
+            "value": "open_world",
+            "name": "Open World"
+        },
+        {
+            "value": "casual",
+            "name": "Casual"
+        },
+        {
+            "value": "stealth",
+            "name": "Stealth"
+        },
+        {
+            "value": "sandbox",
+            "name": "Sandbox"
+        },
+        {
+            "value": "action",
+            "name": "Action"
+        },
+        {
+            "value": "adventure",
+            "name": "Adventure"
+        }
+    ],
+    "genre": "Open World Role Playing",
+    "themes": [
+        {
+            "value": "fantasy",
+            "name": "Fantasy"
+        },
+        {
+            "value": "historical",
+            "name": "Historical"
+        },
+        {
+            "value": "science_fiction",
+            "name": "Science Fiction"
+        }
+    ],
+    "adult_only": true,
+    "play_modes": [
+        {
+            "value": "co_op",
+            "name": "Co-Op"
+        },
+        {
+            "value": "single_player",
+            "name": "Single-Player"
+        },
+        {
+            "value": "two_players",
+            "name": "2-Players"
+        },
+        {
+            "value": "multiplayer",
+            "name": "Multi-Player"
+        }
+    ],
+    "screenshots": [
+        "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_44.jpg",
+        "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_22.jpg",
+        "https://img.gamebrain.co/games/831/assassins_creed_iv_black_flag_ubisoft_2013_18.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_25.jpg",
+        "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_15.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_33.png",
+        "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_23.jpg",
+        "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_14.jpg",
+        "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_24.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_46.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_19.jpg",
+        "https://img.gamebrain.co/games/837/assassins_creed_iv_black_flag_ubisoft_2013_69.jpg",
+        "https://img.gamebrain.co/games/825/assassins_creed_iv_black_flag_ubisoft_2013_21.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_16.jpg",
+        "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_17.jpg",
+        "https://img.gamebrain.co/games/836/assassins_creed_iv_black_flag_ubisoft_2013_86.jpg",
+        "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_40.jpg",
+        "https://img.gamebrain.co/games/824/assassins_creed_iv_black_flag_ubisoft_2013_20.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_70.jpg"
+    ],
+    "videos": [
+        "https://www.youtube-nocookie.com/embed/86K_j3ylA5g",
+        "https://www.youtube-nocookie.com/embed/g5dH2Sqe93Y",
+        "https://www.youtube-nocookie.com/embed/5Cwj1RQbOzM",
+        "https://www.youtube-nocookie.com/embed/hgEckOCOt_c",
+        "https://www.youtube-nocookie.com/embed/ap4FFmJK7q4",
+        "https://www.youtube-nocookie.com/embed/FqkmE_PVW3Y",
+        "https://www.youtube-nocookie.com/embed/qE8ayERHhD4",
+        "https://www.youtube-nocookie.com/embed/tqKyjEUCNG4",
+        "https://www.youtube-nocookie.com/embed/y2qkjlIdyWE",
+        "https://www.youtube-nocookie.com/embed/umzvBHbB-tk",
+        "https://www.youtube-nocookie.com/embed/sPYN9crIA38",
+        "https://www.youtube-nocookie.com/embed/EALGqjrktW8",
+        "https://www.youtube-nocookie.com/embed/efD7YeX8sl8",
+        "https://www.youtube-nocookie.com/embed/YIYjoIUxKxw",
+        "https://www.youtube-nocookie.com/embed/A4BcitbkZ5A",
+        "https://www.youtube-nocookie.com/embed/4Z9wnzlw9hA",
+        "https://www.youtube-nocookie.com/embed/OwVe4ZNeQZk"
+    ],
+    "offers": [
+        {
+            "price": {
+                "value": 29.99,
+                "currency": "USD"
+            },
+            "platform": "PS4",
+            "store_name": "playstation",
+            "title": "Assassin’s Creed IV Black Flag",
+            "url": "https://www.playstation.com/en-us/games/assassins-creed-iv-black-flag/"
+        }
+    ],
+    "official_stores": [
+        {
+            "source": "xbox",
+            "url": "https://www.xbox.com/en-US/games/store/assassins-creed-iv-black-flag/BRKMHZX1RCF2"
+        },
+        {
+            "source": "playstation",
+            "url": "https://www.playstation.com/en-us/games/assassins-creed-iv-black-flag/"
+        }
+    ],
+    "micro_trailer": null
 }
