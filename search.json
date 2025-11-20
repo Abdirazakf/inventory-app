@@ -1,0 +1,310 @@
+{
+  "sorting": {
+    "key": null,
+    "direction": null
+  },
+  "active_filter_options": [],
+  "query": "assassin's creed black flag",
+  "total_results": 19,
+  "limit": 10,
+  "offset": 0,
+  "results": [
+    {
+      "id": 533545,
+      "year": 2013,
+      "name": "Assassin's Creed IV Black Flag",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/784/assassins_creed_iv_black_flag_ubisoft_2013_6.png",
+      "link": "https://gamebrain.co/game/assassins-creed-4-black-flag",
+      "rating": {
+        "mean": 0.8499695,
+        "count": 22479
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_44.jpg",
+        "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_22.jpg",
+        "https://img.gamebrain.co/games/831/assassins_creed_iv_black_flag_ubisoft_2013_18.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_25.jpg",
+        "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_15.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_33.png",
+        "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_23.jpg",
+        "https://img.gamebrain.co/games/827/assassins_creed_iv_black_flag_ubisoft_2013_14.jpg",
+        "https://img.gamebrain.co/games/828/assassins_creed_iv_black_flag_ubisoft_2013_24.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_46.jpg",
+        "https://img.gamebrain.co/games/832/assassins_creed_iv_black_flag_ubisoft_2013_19.jpg",
+        "https://img.gamebrain.co/games/837/assassins_creed_iv_black_flag_ubisoft_2013_69.jpg",
+        "https://img.gamebrain.co/games/825/assassins_creed_iv_black_flag_ubisoft_2013_21.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_16.jpg",
+        "https://img.gamebrain.co/games/830/assassins_creed_iv_black_flag_ubisoft_2013_17.jpg",
+        "https://img.gamebrain.co/games/836/assassins_creed_iv_black_flag_ubisoft_2013_86.jpg",
+        "https://img.gamebrain.co/games/826/assassins_creed_iv_black_flag_ubisoft_2013_40.jpg",
+        "https://img.gamebrain.co/games/824/assassins_creed_iv_black_flag_ubisoft_2013_20.jpg",
+        "https://img.gamebrain.co/games/829/assassins_creed_iv_black_flag_ubisoft_2013_70.jpg"
+      ],
+      "micro_trailer": null,
+      "gameplay": "https://www.youtube-nocookie.com/embed/EALGqjrktW8",
+      "short_description": "Assassin's Creed IV Black Flag is a historical open-world game that transports players to the Caribbean in 1715, during the golden age of piracy. In this game, players can experience single-player, co-op, and multi-player modes as they join a lawless republic of pirates and navigate a world full of naval battles, plunder, and adventure. The game's immersive storyline is inspired by real historical events and brings to life the legends of legendary pirates, such as Blackbeard."
+    },
+    {
+      "id": 33313,
+      "year": 2018,
+      "name": "Assassin's Creed Odyssey",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/284/assassins_creed_odyssey_ubisoft_2018_14.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-odyssey",
+      "rating": {
+        "mean": 0.859493547169811,
+        "count": 102257
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/252/assassins_creed_odyssey_ubisoftbucharest_2018_84.jpg",
+        "https://img.gamebrain.co/games/244/assassins_creed_odyssey_ubisoftbucharest_2018_13.jpg",
+        "https://img.gamebrain.co/games/200/assassins_creed_odyssey_ubisoftbucharest_2018_8.jpg",
+        "https://img.gamebrain.co/games/246/assassins_creed_odyssey_ubisoftbucharest_2018_15.jpg",
+        "https://img.gamebrain.co/games/199/assassins_creed_odyssey_ubisoftbucharest_2018_7.jpg",
+        "https://img.gamebrain.co/games/201/assassins_creed_odyssey_ubisoftbucharest_2018_9.jpg",
+        "https://img.gamebrain.co/games/243/assassins_creed_odyssey_ubisoftbucharest_2018_12.jpg",
+        "https://img.gamebrain.co/games/242/assassins_creed_odyssey_ubisoftbucharest_2018_11.jpg",
+        "https://img.gamebrain.co/games/247/assassins_creed_odyssey_ubisoftbucharest_2018_16.jpg",
+        "https://img.gamebrain.co/games/258/assassins_creed_odyssey_ubisoftbucharest_2018_99.jpg",
+        "https://img.gamebrain.co/games/245/assassins_creed_odyssey_ubisoftbucharest_2018_14.jpg"
+      ],
+      "micro_trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256730995/microtrailer.webm",
+      "gameplay": "https://cdn.akamai.steamstatic.com/steam/apps/256730995/microtrailer.webm",
+      "short_description": "Assassin's Creed Odyssey is an action RPG set in ancient Greece, during the Peloponnesian War. You play as a legendary Spartan hero, choosing to be either a male or female protagonist, and embark on a journey to discover your history and shape the future of Greece. The game features branching dialogue options, vast landscapes, epic naval combat, and a rich, intriguing storyline."
+    },
+    {
+      "id": 191843,
+      "year": 2017,
+      "name": "Assassin's Creed Origins",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/142/assassins_creed_origins_ubisoftmontreal_2017_87.png",
+      "link": "https://gamebrain.co/game/assassins-creed-origins",
+      "rating": {
+        "mean": 0.833121981132076,
+        "count": 59117
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/137/assassins_creed_origins_ubisoftmontreal_2017_95.jpg",
+        "https://img.gamebrain.co/games/135/assassins_creed_origins_ubisoftmontreal_2017_39.jpg",
+        "https://img.gamebrain.co/games/133/assassins_creed_origins_ubisoftmontreal_2017_55.jpg",
+        "https://img.gamebrain.co/games/180/assassins_creed_origins_ubisoftmontreal_2017_135.jpg",
+        "https://img.gamebrain.co/games/139/assassins_creed_origins_ubisoftmontreal_2017_88.jpg",
+        "https://img.gamebrain.co/games/134/assassins_creed_origins_ubisoftmontreal_2017_38.jpg",
+        "https://img.gamebrain.co/games/134/assassins_creed_origins_ubisoftmontreal_2017_56.jpg",
+        "https://img.gamebrain.co/games/131/assassins_creed_origins_ubisoftmontreal_2017_53.jpg",
+        "https://img.gamebrain.co/games/175/assassins_creed_origins_ubisoftmontreal_2017_103.jpg",
+        "https://img.gamebrain.co/games/135/assassins_creed_origins_ubisoftmontreal_2017_93.jpg",
+        "https://img.gamebrain.co/games/142/assassins_creed_origins_ubisoftmontreal_2017_78.png",
+        "https://img.gamebrain.co/games/136/assassins_creed_origins_ubisoftmontreal_2017_49.jpg",
+        "https://img.gamebrain.co/games/128/assassins_creed_origins_ubisoftmontreal_2017_32.jpg",
+        "https://img.gamebrain.co/games/134/assassins_creed_origins_ubisoftmontreal_2017_92.jpg",
+        "https://img.gamebrain.co/games/130/assassins_creed_origins_ubisoftmontreal_2017_52.jpg",
+        "https://img.gamebrain.co/games/130/assassins_creed_origins_ubisoftmontreal_2017_43.jpg",
+        "https://img.gamebrain.co/games/127/assassins_creed_origins_ubisoftmontreal_2017_40.jpg",
+        "https://img.gamebrain.co/games/131/assassins_creed_origins_ubisoftmontreal_2017_35.jpg",
+        "https://img.gamebrain.co/games/180/assassins_creed_origins_ubisoftmontreal_2017_104.png",
+        "https://img.gamebrain.co/games/132/assassins_creed_origins_ubisoftmontreal_2017_36.jpg",
+        "https://img.gamebrain.co/games/178/assassins_creed_origins_ubisoftmontreal_2017_124.jpg",
+        "https://img.gamebrain.co/games/128/assassins_creed_origins_ubisoftmontreal_2017_50.jpg",
+        "https://img.gamebrain.co/games/133/assassins_creed_origins_ubisoftmontreal_2017_73.jpg",
+        "https://img.gamebrain.co/games/132/assassins_creed_origins_ubisoftmontreal_2017_90.jpg",
+        "https://img.gamebrain.co/games/133/assassins_creed_origins_ubisoftmontreal_2017_37.jpg",
+        "https://img.gamebrain.co/games/177/assassins_creed_origins_ubisoftmontreal_2017_101.png",
+        "https://img.gamebrain.co/games/129/assassins_creed_origins_ubisoftmontreal_2017_51.jpg",
+        "https://img.gamebrain.co/games/136/assassins_creed_origins_ubisoftmontreal_2017_94.jpg",
+        "https://img.gamebrain.co/games/132/assassins_creed_origins_ubisoftmontreal_2017_54.jpg"
+      ],
+      "micro_trailer": "https://video.akamai.steamstatic.com/store_trailers/256699401/microtrailer.webm",
+      "gameplay": "https://www.youtube-nocookie.com/embed/3w-3qINOSMY",
+      "short_description": "Assassin's Creed Origins is a single-player historical open-world game set in ancient Egypt, boasting stellar story, mechanics, graphics, and soundtrack. The Gold Edition includes two major expansions, the Deluxe Pack, and the Season Pass. Explore a country full of mystery, pyramids, and dangers, while uncovering the origins of the Assassin's Brotherhood. However, be prepared for grinding, bugs, and some ads, while enjoying the stunning atmosphere and emotional narrative."
+    },
+    {
+      "id": 542832,
+      "year": 2014,
+      "name": "Assassin's Creed Rogue",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/42/assassins_creed_rogue_ubisoft_2014_14.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-rogue",
+      "rating": {
+        "mean": 0.787161333333333,
+        "count": 11990
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/998/assassins_creed_rogue_ubisoft_2015_8.jpg",
+        "https://img.gamebrain.co/games/999/assassins_creed_rogue_ubisoft_2015_9.jpg",
+        "https://img.gamebrain.co/games/996/assassins_creed_rogue_ubisoft_2015_6.jpg"
+      ],
+      "micro_trailer": null,
+      "gameplay": null,
+      "short_description": "Assassin's Creed Rogue follows Shay Patrick Cormac, a former Assassin turned Templar, in colonial America during the French and Indian War. Players explore the North Atlantic Ocean and river valley, hunting Assassins and uncovering the Templar's agenda. This engaging narrative offers a fresh perspective on the Assassin's Creed series."
+    },
+    {
+      "id": 113401,
+      "year": 2015,
+      "name": "Assassin's Creed Syndicate",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/100/assassins_creed_syndicate_ubisoftquebec_2015_29.png",
+      "link": "https://gamebrain.co/game/assassins-creed-syndicate",
+      "rating": {
+        "mean": 0.765565609756098,
+        "count": 17083
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/460/assassins_creed_syndicate_ubisoft_2015_13.jpg",
+        "https://img.gamebrain.co/games/415/assassins_creed_syndicate_ubisoft_2015_7.jpg",
+        "https://img.gamebrain.co/games/416/assassins_creed_syndicate_ubisoft_2015_8.jpg",
+        "https://img.gamebrain.co/games/470/assassins_creed_syndicate_ubisoft_2015_77.jpg",
+        "https://img.gamebrain.co/games/414/assassins_creed_syndicate_ubisoft_2015_6.jpg",
+        "https://img.gamebrain.co/games/458/assassins_creed_syndicate_ubisoft_2015_11.jpg",
+        "https://img.gamebrain.co/games/462/assassins_creed_syndicate_ubisoft_2015_15.jpg",
+        "https://img.gamebrain.co/games/472/assassins_creed_syndicate_ubisoft_2015_79.jpg",
+        "https://img.gamebrain.co/games/459/assassins_creed_syndicate_ubisoft_2015_12.jpg",
+        "https://img.gamebrain.co/games/413/assassins_creed_syndicate_ubisoft_2015_5.jpg",
+        "https://img.gamebrain.co/games/464/assassins_creed_syndicate_ubisoft_2015_80.jpg",
+        "https://img.gamebrain.co/games/471/assassins_creed_syndicate_ubisoft_2015_78.jpg",
+        "https://img.gamebrain.co/games/463/assassins_creed_syndicate_ubisoft_2015_34.jpg",
+        "https://img.gamebrain.co/games/417/assassins_creed_syndicate_ubisoft_2015_9.jpg",
+        "https://img.gamebrain.co/games/457/assassins_creed_syndicate_ubisoft_2015_10.jpg"
+      ],
+      "micro_trailer": "https://video.akamai.steamstatic.com/store_trailers/256658414/microtrailer.webm",
+      "gameplay": "https://video.akamai.steamstatic.com/store_trailers/256658414/microtrailer.webm",
+      "short_description": "Assassin's Creed Syndicate is a single-player historical open world game set in 1868 London during the Industrial Revolution. As Jacob Frye, an Assassin fighting for justice, lead your underworld organization to take back the city from Templar control and experience a good story with stellar mechanics, impressive graphics, and an amazing soundtrack. However, be prepared for grinding, some bugs, and a possible abundance of ads."
+    },
+    {
+      "id": 356025,
+      "year": 2014,
+      "name": "Assassin's Creed Unity Gold Edition",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/880/assassins_creed_unity_ubisoftmontreal_2014_2.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-unity",
+      "rating": {
+        "mean": 0.714043071428572,
+        "count": 19998
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/71/assassins_creed_unity_ubisoft_2014_29.jpg",
+        "https://img.gamebrain.co/games/16/assassins_creed_unity_ubisoft_2014_4.jpg",
+        "https://img.gamebrain.co/games/18/assassins_creed_unity_ubisoft_2014_6.jpg",
+        "https://img.gamebrain.co/games/21/assassins_creed_unity_ubisoft_2014_9.jpg",
+        "https://img.gamebrain.co/games/62/assassins_creed_unity_ubisoft_2014_11.jpg"
+      ],
+      "micro_trailer": "https://video.akamai.steamstatic.com/store_trailers/2033803/microtrailer.webm",
+      "gameplay": "https://video.akamai.steamstatic.com/store_trailers/2033803/microtrailer.webm",
+      "short_description": "\"Assassin's Creed Unity is a historical open-world game set during the French Revolution, offering both single-player and co-op modes for 2 players. The Limited Edition includes the Chemical Revolution mission. Experience the revolution's chaos, expose the powers behind it, and transform into a Master Assassin in this next-gen evolution of the franchise.\""
+    },
+    {
+      "id": 1001615,
+      "year": 2019,
+      "name": "Assassin's Creed III Remastered",
+      "genre": "Action Adventure",
+      "image": "https://img.gamebrain.co/games/713/assassins_creed_3_remastered_ubisoft_2019_30.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-iii-remastered",
+      "rating": {
+        "mean": 0.6722495,
+        "count": 7143
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/714/assassins_creed_3_remastered_ubisoft_2019_13.jpg",
+        "https://img.gamebrain.co/games/718/assassins_creed_3_remastered_ubisoft_2019_17.jpg",
+        "https://img.gamebrain.co/games/718/assassins_creed_3_remastered_ubisoft_2019_26.jpg",
+        "https://img.gamebrain.co/games/721/assassins_creed_3_remastered_ubisoft_2019_38.jpg",
+        "https://img.gamebrain.co/games/717/assassins_creed_3_remastered_ubisoft_2019_16.jpg",
+        "https://img.gamebrain.co/games/714/assassins_creed_3_remastered_ubisoft_2019_40.jpg",
+        "https://img.gamebrain.co/games/717/assassins_creed_3_remastered_ubisoft_2019_25.jpg",
+        "https://img.gamebrain.co/games/715/assassins_creed_3_remastered_ubisoft_2019_41.jpg",
+        "https://img.gamebrain.co/games/716/assassins_creed_3_remastered_ubisoft_2019_15.jpg",
+        "https://img.gamebrain.co/games/720/assassins_creed_3_remastered_ubisoft_2019_19.jpg",
+        "https://img.gamebrain.co/games/665/assassins_creed_3_remastered_ubisoft_2019_3.jpg",
+        "https://img.gamebrain.co/games/715/assassins_creed_3_remastered_ubisoft_2019_14.jpg",
+        "https://img.gamebrain.co/games/719/assassins_creed_3_remastered_ubisoft_2019_18.jpg"
+      ],
+      "micro_trailer": null,
+      "gameplay": "https://www.youtube-nocookie.com/embed/lWyEU840teM",
+      "short_description": "In Assassin's Creed III Remastered, play as Connor, a half-Native American assassin, during the American Revolution. Fight for liberty and your clan's survival in a vast, open world, as you take on historical figures and participate in iconic events of the era. Improved gameplay mechanics and enhanced graphics provide a smoother and more immersive thrill than the original."
+    },
+    {
+      "id": 213281,
+      "year": 2012,
+      "name": "Assassin's Creed III",
+      "genre": "Open World Hack and Slash",
+      "image": "https://img.gamebrain.co/games/760/assassins_creed_iii_ubisoft_2012_4.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-3",
+      "rating": {
+        "mean": 0.723602471616411,
+        "count": 4966
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/629/assassins_creed_iii_ubisoftmontreal_2012_7.jpg"
+      ],
+      "micro_trailer": null,
+      "gameplay": null,
+      "short_description": "In Assassin's Creed III, play as a Native American assassin during the American Revolution, utilizing a variety of weapons and taking part in significant historical events. The Ubisoft-AnvilNext game engine powers this immersive and gruesome representation of the American Revolution, complete with realistic graphics, animations, and physics. Explore diverse settings, from bustling city streets to chaotic battlefields, and experience a fresh perspective on historical events."
+    },
+    {
+      "id": 258680,
+      "year": 2019,
+      "name": "Assassin's Creed: The Rebel Collection",
+      "genre": "Role Playing",
+      "image": "https://img.gamebrain.co/games/208/game_igdb_122236_1.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-the-rebel-collection",
+      "rating": {
+        "mean": 0.858534746952804,
+        "count": 62
+      },
+      "adult_only": true,
+      "screenshots": [
+        "https://img.gamebrain.co/games/210/game_igdb_122236_3.jpg",
+        "https://img.gamebrain.co/games/213/game_igdb_122236_6.jpg",
+        "https://img.gamebrain.co/games/211/game_igdb_122236_4.jpg",
+        "https://img.gamebrain.co/games/212/game_igdb_122236_5.jpg",
+        "https://img.gamebrain.co/games/209/game_igdb_122236_2.jpg"
+      ],
+      "micro_trailer": null,
+      "gameplay": "https://www.youtube-nocookie.com/embed/FUzlIS_V9NA",
+      "short_description": "Assassin's Creed: The Rebel Collection is a single-player Role Playing Game known for its pretty visuals. It includes two action-packed games, Assassin’s Creed IV Black Flag and Assassin’s Creed Rogue, along with all their single-player DLCs. Players can become the most feared pirate in the Caribbean, explore a massive open world, and take part in an award-winning naval experience, or play as a Templar for the first time in franchise history. The game also features enhanced features like Handheld Mode, HD Rumble, Touch Screen Interface, and Motion Control Aiming."
+    },
+    {
+      "id": 310325,
+      "year": 2014,
+      "name": "Assassin's Creed: The Americas Collection",
+      "genre": "Open World Role Playing",
+      "image": "https://img.gamebrain.co/games/860/assassins_creed_the_americas_collection_ubisoft_2014_1.jpg",
+      "link": "https://gamebrain.co/game/assassins-creed-the-americas-collection",
+      "rating": {
+        "mean": 0.83,
+        "count": 200
+      },
+      "adult_only": true,
+      "screenshots": [],
+      "micro_trailer": null,
+      "gameplay": null,
+      "short_description": "\"Assassin's Creed: The Americas Collection\" is a compilation of three games in the Assassin's Creed series: Liberation HD, III, and IV: Black Flag. The games follow the centuries-long battle between the Assassins, who fight for peace and freedom, and the Templars, who desire control and order. Each game in the collection offers a unique storyline and setting, ranging from the American Revolution to the Caribbean pirate era, with a mix of action, adventure, and stealth gameplay."
+    }
+  ],
+  "sorting_options": [
+    {
+      "name": "Rating",
+      "sort": "DESC",
+      "key": "computed_rating"
+    },
+    {
+      "name": "Price",
+      "sort": "ASC",
+      "key": "price"
+    },
+    {
+        "name": "Release Date",
+        "sort": "DESC",
+        "key": "release_date"
+    }
+  ]
+}
