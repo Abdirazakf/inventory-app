@@ -57,20 +57,55 @@ async function getGameDetails(id) {
 }
 
 function formatGameData(game) {
-    if (!game){
+    if (!game) {
         throw new Error('No game data to format')
     }
-
+    
+    const getPrice = (offers) => {
+        if (!offers || !Array.isArray(offers) || offers.length === 0) {
+            return null
+        }
+        for (const offer of offers) {
+            if (offer?.price?.value) {
+                return parseFloat(offer.price.value)
+            }
+        }
+        return null
+    }
+    
+    const getRating = (rating) => {
+        if (!rating || typeof rating.mean !== 'number') {
+            return null
+        }
+        return parseFloat((rating.mean * 10).toFixed(2))
+    }
+    
+    const getYear = (date) => {
+        if (!date || typeof date !== 'string') {
+            return null
+        }
+        const year = parseInt(date.slice(0, 4))
+        return isNaN(year) ? null : year
+    }
+    
+    const getPlatforms = (platforms) => {
+        if (!platforms || !Array.isArray(platforms)) {
+            return []
+        }
+        return platforms
+            .filter(p => p && p.name)
+            .map(p => p.name)
+    }
+    
     return {
-        id: game.id,
-        title: game.name,
-        price: game.offers[0].price.value,
-        rating: (game.rating.mean * 10).toFixed(2),
-        release_year: parseInt(game.release_date.slice(0,4)),
-        image_url: game.image,
-        genre_name: game.genre,
-        developer_name: game.developer,
-        platforms: game.platforms.map(platform => platform.name) || []
+        title: game.name || 'Unknown Title',
+        price: getPrice(game.offers),
+        rating: getRating(game.rating),
+        release_year: getYear(game.release_date),
+        image_url: game.image || null,
+        genre_name: game.genre || 'Unknown',
+        developer_name: game.developer || 'Unknown',
+        platforms: getPlatforms(game.platforms)
     }
 }
 
