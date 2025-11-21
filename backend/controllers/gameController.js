@@ -20,7 +20,7 @@ exports.gameSearchGet = [
         const errors = validationResult(req)
 
         if (!errors.isEmpty()) {
-            return res.status(400).json({
+            return res.status(400).send({
                 errors: errors.array()
             })
         }
@@ -28,7 +28,7 @@ exports.gameSearchGet = [
         const searchedGame = req.query.q || ""
 
         if (!searchedGame) {
-            return res.json([])
+            return res.send('No Search Entered')
         }
 
         const result = await db.getSearchedGame(searchedGame)
