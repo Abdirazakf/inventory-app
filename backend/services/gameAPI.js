@@ -74,29 +74,25 @@ function formatGameData(game) {
     }
 }
 
-// API test
+async function searchAndFormatGame(query) {
+    const gameId = await searchGame(query)
+    
+    if (!gameId) {
+        return null
+    }
+    
+    const details = await getGameDetails(gameId)
+    
+    if (!details) {
+        return null
+    }
+    
+    return formatGameData(details)
+}
 
-// async function main() {
-//     const name = "elden ring"
-    
-//     console.log('Searching for:', name)
-//     const gameId = await searchGame(name)
-    
-//     if (!gameId) {
-//         console.error('No game found')
-//         return
-//     }
-
-//     console.log('Found game ID:', gameId)
-//     const details = await getGameDetails(gameId)
-    
-//     if (!details) {
-//         console.error('Could not fetch game details')
-//         return
-//     }
-    
-//     const formatted = formatGameData(details)
-//     console.log('Formatted game data:', formatted)
-// }
-
-// main()
+module.exports = {
+    searchGame,
+    getGameDetails,
+    formatGameData,
+    searchAndFormatGame
+}
