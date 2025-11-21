@@ -1,4 +1,4 @@
-require('dotenv').config({path: '../.env'})
+require('dotenv').config()
 const base_url = 'https://api.gamebrain.co/v1/games'
 const key = process.env.API_KEY
 
