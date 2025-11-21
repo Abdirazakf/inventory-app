@@ -1,3 +1,4 @@
+require('dotenv').config()
 const pool = require('./pool')
 
 async function getAllGames() {
@@ -49,7 +50,101 @@ async function getSearchedGame(search) {
     return rows
 }
 
+async function insertNewGame(data) {
+    const client = await pool.connect()
+
+    try {
+        await client.query('BEGIN')
+
+        // Insert or get genre
+        const genre = await client.query(
+            `INSERT INTO genres (genre_name)
+            VALUES ($1)
+            ON CONFLICT (genre_name) DO UPDATE SET genre_name = EXCLUDED.genre_name
+            RETURNING id`,
+            [data.genre_name]
+        )
+        const genreID = genre.rows[0].id
+
+        // Insert or get developer
+        const developer = await client.query(
+            `INSERT INTO developers (developer_name)
+            VALUES ($1)
+            ON CONFLICT (developer_name) DO UPDATE SET developer_name = EXCLUDED.developer_name
+            RETURNING id`,
+            [data.developer_name]
+        )
+        const devID = developer.rows[0].id
+
+        // Insert game
+        const game = await client.query(
+            `INSERT INTO games (title, price, genre_id, rating, release_year, image_url, developer_id)
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            RETURNING id`,
+            [
+                data.title,
+                data.price,
+                genreID,
+                data.rating,
+                data.release_year,
+                data.image_url,
+                devID
+            ]
+        )
+        const gameID = game.rows[0].id
+
+        // Insert platforms and link to game
+        for (const platformName of data.platforms){
+            const platform = await client.query(
+                `INSERT INTO platforms (platform_name)
+                VALUES ($1)
+                ON CONFLICT (platform_name) DO UPDATE SET platform_name = EXCLUDED.platform_name
+                RETURNING id`,
+                [platformName]
+            )
+            const platformID = platform.rows[0].id
+
+            await client.query(
+                `INSERT INTO game_platforms (game_id, platform_id)
+                VALUES ($1, $2)
+                ON CONFLICT DO NOTHING`,
+                [gameID, platformID]
+            )
+        }
+
+        await client.query('COMMIT')
+        
+        const {rows} = await pool.query(`
+            SELECT
+                g.id,
+                g.title,
+                g.price,
+                g.rating,
+                g.release_year,
+                g.image_url,
+                gen.genre_name,
+                d.developer_name,
+                ARRAY_AGG(p.platform_name ORDER BY p.platform_name) AS platforms
+            FROM games g
+            LEFT JOIN genres gen ON g.genre_id = gen.id
+            LEFT JOIN developers d ON g.developer_id = d.id
+            LEFT JOIN game_platforms gp ON g.id = gp.game_id
+            LEFT JOIN platforms p ON gp.platform_id = p.id
+            WHERE g.id = $1
+            GROUP BY g.id, g.title, g.price, g.rating, g.release_year, g.image_url, gen.genre_name, d.developer_name`
+            , [gameID])
+
+        return rows[0]
+    } catch(err) {
+        await client.query('ROLLBACK')
+        throw err
+    } finally {
+        client.release()
+    }
+}
+
 module.exports = {
     getAllGames,
     getSearchedGame,
+    insertNewGame
 }
