@@ -1,4 +1,5 @@
 const db = require('../db/queries')
+const gameAPI = require('../services/gameAPI')
 const {query, validationResult} = require('express-validator')
 
 const lengthErr = 'Search must be between 1 and 255 characters'
@@ -31,7 +32,39 @@ exports.gameSearchGet = [
             return res.send('No Search Entered')
         }
 
-        const result = await db.getSearchedGame(searchedGame)
-        res.json(result)
+        try {
+            let result = await db.getSearchedGame((searchedGame))
+
+            if (result.length === 0) {
+                console.log(`${searchedGame} not found in database`)
+
+                const newGame = await gameAPI.searchAndFormatGame(searchedGame)
+
+                if (!newGame){
+                    return res.status(404).json({
+                        error: 'Game not found in database or API',
+                        search: searchedGame
+                    })
+                }
+
+                console.log('Adding to database')
+                const savedGame = await db.insertNewGame(newGame)
+
+                result = [savedGame]
+
+                console.log(`Successfully added ${searchedGame} to the database`)
+            }
+
+            res.json({
+                results: result,
+                count: result.length,
+            })
+        } catch(err){
+            console.error('Search error:', err)
+            res.status(500).json({
+                error: 'Search Failed',
+                message: err.message
+            })
+        }
     }
 ]
