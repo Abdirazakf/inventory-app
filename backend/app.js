@@ -8,7 +8,7 @@ require('dotenv').config()
 app.use(express.urlencoded({extended: true}))
 
 app.use('/', indexRouter)
-app.use('/game', gameRouter)
+app.use('/games', gameRouter)
 
 app.listen(process.env.PORT, (err) => {
     if (err){
