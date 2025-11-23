@@ -14,6 +14,17 @@ app.use(express.json())
 
 app.use('/games', gameRouter)
 
+// Serve React app
+if (process.env.NODE_ENV === 'production') {
+    // Serve static files
+    app.use(express.static(path.join(__dirname, '../frontend/dist')))
+    
+    // Handle React routing - send all non-API requests to index.html
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
+    })
+}
+
 app.listen(process.env.PORT, (err) => {
     if (err){
         console.log(err)
