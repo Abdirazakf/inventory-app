@@ -6,6 +6,7 @@ const gameRouter = require('./routes/gameRouter')
 require('dotenv').config()
 
 app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
 app.use('/', indexRouter)
 app.use('/games', gameRouter)
