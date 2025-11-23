@@ -206,6 +206,44 @@ exports.gameUpdate = [
     }
 ]
 
-exports.gameDelete = (req, res) => {
+exports.gameDelete = [
+    validateId,
+    async (req, res) => {
+        const errors = validationResult(req)
 
-}
+        if (!errors.isEmpty()){
+            return res.status(400).json({
+                errors: errors.array()
+            })
+        }
+
+        const id = req.params.id
+
+        try {
+            const game = await db.getGameByID(id)
+
+            if (!game){
+                return res.status(404).json({
+                    error: "Game not found",
+                    id: id
+                })
+            }
+
+            await db.deleteGame(id)
+
+            res.json({
+                message: "Game successfully deleted",
+                deletedGame: {
+                    id: id,
+                    title: game.title
+                }
+            })
+        } catch(err){
+            console.error("Error deleteing game:", err)
+            res.status(500).json({
+                error: 'Failed to delete game',
+                message: err.message
+            })
+        }
+    }
+]
