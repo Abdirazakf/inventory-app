@@ -1,12 +1,18 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const gameRouter = require('./routes/gameRouter')
 require('dotenv').config()
 
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}))
+
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.use('/', gameRouter)
+app.use('/games', gameRouter)
 
 app.listen(process.env.PORT, (err) => {
     if (err){
