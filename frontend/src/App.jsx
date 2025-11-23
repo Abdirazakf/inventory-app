@@ -5,7 +5,7 @@ import Homepage from "./pages/Homepage"
 
 export default function App() {
     return (
-        <div className="min-h-screen bg-base-200 transition-colors duration-300" data-theme="dark">
+        <div className="min-h-screen bg-base-200 transition-colors duration-300" data-theme="forest">
             <Navbar />
             <Routes>
                 <Route path='/' element={<Homepage/>} />
