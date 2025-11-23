@@ -1,9 +1,11 @@
 import { THEMES } from "../constants";
 import { PaletteIcon } from "lucide-react";
+import { useThemeStore } from "../store/useThemeStore";
 
 export default function ThemeSelector(){
-    const currentTheme = 'forest'
-
+    const {currentTheme, setTheme} = useThemeStore()
+    console.log(currentTheme)
+    
     return(
         <div className="dropdown dropdown-end">
 
@@ -16,7 +18,9 @@ export default function ThemeSelector(){
             backdrop-blur-lg rounded-2xl w-56 border border-base-content/10">
                 {THEMES.map(theme => (
                     <button key={theme.name} className={`w-full px-4 py-3 rounded-xl flex 
-                    items-center gap-3 transition-colors ${currentTheme === theme.name ? "bg-primary/10 text-primary" : "hover:bg-base-content/5"}`}>
+                    items-center gap-3 transition-colors ${currentTheme === theme.name ? "bg-primary/10 text-primary" : "hover:bg-base-content/5"}`}
+                    onClick={() => setTheme(theme.name)}
+                    >
                         <PaletteIcon className="size-4" />
                         <span className="text-sm font-medium">{theme.label}</span>
 
