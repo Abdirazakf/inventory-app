@@ -18,7 +18,7 @@ export const useGameStore = create((set) => ({
             set({gameList: response.data.results, error: null})
         } catch(err) {
             if (err.status == 429) {
-                set({error: 'Rate limit exceeded'})
+                set({error: 'Rate limit exceeded', gameList: null})
             } else {
                 set({error: 'Something went wrong'})
             }
