@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui";
-
 export default {
   content: [
     "./index.html",
@@ -9,23 +7,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [daisyui],
+  plugins: [
+    require("daisyui")
+  ],
   daisyui: {
-    themes: [
-      "pastel",
-      "retro",
-      "coffee",
-      "forest",
-      "cyberpunk",
-      "synthwave",
-      "luxury",
-      "autumn",
-      "valentine",
-      "aqua",
-      "business",
-      "night",
-      "dracula"
-    ]
+    themes: ["coffee", "pastel", "retro", "forest", "cyberpunk", "synthwave", "luxury", "autumn", "valentine", "aqua", "business", "night", "dracula"],
   }
 }
-
