@@ -207,10 +207,19 @@ async function updateGame(id, updates){
     }
 }
 
+async function deleteGame(id){
+    const {rowCount} = await pool.query(`
+        DELETE FROM games WHERE id = $1
+        `, [id])
+
+    return rowCount > 0
+}
+
 module.exports = {
     getAllGames,
     getSearchedGame,
     insertNewGame,
     getGameByID,
-    updateGame
+    updateGame,
+    deleteGame
 }
