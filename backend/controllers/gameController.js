@@ -128,7 +128,7 @@ exports.gameGetByID = [
     }
 ]
 
-exports.gameUpdate = (req, res) => {
+exports.gameUpdate = [
     validateUpdate,
     async (req, res) => {
         const errors = validationResult(req)
@@ -166,7 +166,7 @@ exports.gameUpdate = (req, res) => {
             }
 
             const allowedUpdates = {}
-            const blockedUpdates = {}
+            const blockedUpdates = []
 
             for (const [key, value] of Object.entries(cleanUpdates)) {
                 if (currentGame[key] === null || currentGame[key] === undefined) {
@@ -188,7 +188,7 @@ exports.gameUpdate = (req, res) => {
                 })
             }
 
-            const updatedGame = await db.updatedGame(id, allowedUpdates)
+            const updatedGame = await db.updateGame(id, allowedUpdates)
 
             res.json({
                 message: 'Game updated successfully',
@@ -204,7 +204,7 @@ exports.gameUpdate = (req, res) => {
             })
         }
     }
-}
+]
 
 exports.gameDelete = (req, res) => {
 
