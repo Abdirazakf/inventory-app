@@ -9,8 +9,6 @@ export default function Homepage(){
     useEffect(() => {
         fetchGames()
     }, [fetchGames])
-
-    console.log(gameList)
     
     return(
         <main className="max-w-6xl mx-auto px-4 py-8">
@@ -23,6 +21,8 @@ export default function Homepage(){
                     <RefreshCwIcon className="size-5"/>
                 </button>
             </div>
+
+            {error && <div className="alert alert-error mb-8">{error}</div>}
 
             {loading ? (
                 <div className="flex justify-center items-center h-64">
