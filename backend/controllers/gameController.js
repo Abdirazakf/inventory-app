@@ -1,8 +1,13 @@
 const db = require('../db/queries')
 const gameAPI = require('../services/gameAPI')
-const {query, validationResult} = require('express-validator')
+const {body, param, query, validationResult} = require('express-validator')
 
 const lengthErr = 'Search must be between 1 and 255 characters'
+const idErr = 'Valid game ID is required'
+const priceErr = 'Price must be positive number'
+const ratingErr = 'Rating must be between 0 and 10'
+const yearErr = 'Release year must be valid'
+const imageErr = 'Image URL must be valid'
 
 const validateSearch = [
     query('q').trim()
@@ -10,8 +15,30 @@ const validateSearch = [
     .withMessage(lengthErr)
 ]
 
+const validateId = [
+    param('id').isInt({min: 1})
+    .withMessage(idErr)
+]
+
+const validateUpdate = [
+    param('id').isInt({min: 1})
+    .withMessage(idErr),
+    body('price').optional().isFloat({min: 0})
+    .withMessage(priceErr),
+    body('rating').optional().isFloat({min: 0})
+    .withMessage(ratingErr),
+    body('release_year').optional()
+    .isInt({max: new Date().getFullYear() + 2}) // current year plus 2
+    .withMessage(yearErr),
+    body('image_url').optional()
+    .isURL()
+    .withMessage(imageErr)
+]
+
 exports.gameListGet =  async (req, res) => {
-    const games = await db.getAllGames()
+    const games = {
+        results: await db.getAllGames()
+    }
     res.send(games)
 }
 
@@ -68,3 +95,43 @@ exports.gameSearchGet = [
         }
     }
 ]
+
+exports.gameGetByID = [
+    validateId,
+    async (req, res) => {
+        const errors = validationResult(req)
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            })
+        }
+
+        try {
+            const game = await db.getGameById(req.params.id)
+
+            if (!game){
+                return res.status(404).json({
+                    error: "Game not found",
+                    id: req.params.id
+                })
+            }
+
+            res.json(game)
+        } catch(err){
+            console.error('Error fetching game:', err)
+            res.status(500).json({
+                error: 'Failed to fetch game',
+                message: err.message
+            })
+        }
+    }
+]
+
+exports.gameUpdate = (req, res) => {
+    
+}
+
+exports.gameDelete = (req, res) => {
+
+}
