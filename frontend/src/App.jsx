@@ -2,7 +2,7 @@ import {Routes, Route} from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Games from "./pages/Games"
 import Homepage from "./pages/Homepage"
-import { useThemeStore } from "./store/useThemeStore"
+import { useThemeStore } from "./states/useThemeStore"
 
 export default function App() {
     const {currentTheme} = useThemeStore()
