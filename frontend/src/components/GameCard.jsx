@@ -1,7 +1,10 @@
+import { useGameStore } from "../states/useGameStore"
 import { EditIcon, Trash2Icon } from "lucide-react"
 import {Link} from "react-router-dom"
 
 export default function GameCard({game}) {
+    const {deleteGame} = useGameStore()
+
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <figure className="relative pt-[56.25%]">
@@ -24,7 +27,7 @@ export default function GameCard({game}) {
                     </Link>
 
                     <button className="btn btn-sm btn-error btn-outline">
-                        <Trash2Icon className="size-4"/>
+                        <Trash2Icon className="size-4" onClick={() => deleteGame(game.id)}/>
                     </button>
                 </div>
             </div>

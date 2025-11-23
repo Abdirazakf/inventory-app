@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import axios from 'axios'
+import axios from 'axios';
+import toast from "react-hot-toast";
 
 const BASE_URL = import.meta.env.PROD ? 
     '/games'
@@ -23,7 +24,23 @@ export const useGameStore = create((set) => ({
                 set({error: 'Something went wrong'})
             }
             console.error('Failed to get games:', err)
+            toast.error('Failed to get games')
         } finally {
+            set({loading: false})
+        }
+    },
+
+    deleteGame: async(id) => {
+        set({loading: true})
+
+        try {
+            await axios.delete(`${BASE_URL}/${id}`)
+            set(prev => ({gameList: prev.gameList.filter(game => game.id !== id)}))
+            toast.success('Product deleted successfully')
+        } catch(err){
+            console.log('Error delete game:',err)
+            toast.error('Failed to delete game')
+        } finally{
             set({loading: false})
         }
     }
