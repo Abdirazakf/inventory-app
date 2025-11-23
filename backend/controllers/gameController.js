@@ -108,7 +108,7 @@ exports.gameGetByID = [
         }
 
         try {
-            const game = await db.getGameById(req.params.id)
+            const game = await db.getGameByID(req.params.id)
 
             if (!game){
                 return res.status(404).json({
@@ -129,7 +129,81 @@ exports.gameGetByID = [
 ]
 
 exports.gameUpdate = (req, res) => {
-    
+    validateUpdate,
+    async (req, res) => {
+        const errors = validationResult(req)
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            })
+        }
+
+        const id = req.params.id
+        const updates = req.body
+
+        const cleanUpdates = Object.entries(updates).reduce((acc, [key, value]) => {
+            if (value !== undefined && value !== ''){
+                acc[key] = value
+            }
+            return acc
+        }, {})
+
+        if (Object.keys(cleanUpdates).length === 0) {
+            return res.status(400).json({
+                error: 'No valid updates provided'
+            })
+        }
+
+        try {
+            const currentGame = await db.getGameByID(id)
+
+            if (!currentGame){
+                return res.status(404).json({
+                    error: 'Game not found',
+                    id: id
+                })
+            }
+
+            const allowedUpdates = {}
+            const blockedUpdates = {}
+
+            for (const [key, value] of Object.entries(cleanUpdates)) {
+                if (currentGame[key] === null || currentGame[key] === undefined) {
+                    allowedUpdates[key] = value
+                } else {
+                    blockedUpdates.push(key)
+                }
+            }
+
+            if (Object.keys(allowedUpdates).length === 0){
+                return res.status(400).json({
+                    error: 'No null fields to update',
+                    message: 'Only null values can be updated',
+                    blockedFields: blockedUpdates,
+                    currentValues: blockedUpdates.reduce((acc, key) => {
+                        acc[key] = currentGame[key]
+                        return acc
+                    }, {})
+                })
+            }
+
+            const updatedGame = await db.updatedGame(id, allowedUpdates)
+
+            res.json({
+                message: 'Game updated successfully',
+                updated: allowedUpdates,
+                blocked: blockedUpdates.length > 0 ? blockedUpdates : undefined,
+                game: updatedGame
+            })
+        } catch(err){
+            console.error('Error updating game:', err)
+            res.status(500).json({
+                error: 'Failed to update game',
+                message: err.message
+            })
+        }
+    }
 }
 
 exports.gameDelete = (req, res) => {
