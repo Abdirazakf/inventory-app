@@ -13,11 +13,11 @@ async function getAllGames() {
             gen.genre_name,
             d.developer_name,
             ARRAY_AGG(p.platform_name ORDER BY p.platform_name) AS platforms
-        FROM games g
-        LEFT JOIN genres gen ON g.genre_id = gen.id
-        LEFT JOIN developers d ON g.developer_id = d.id
-        LEFT JOIN game_platforms gp ON g.id = gp.game_id
-        LEFT JOIN platforms p ON gp.platform_id = p.id
+        FROM games AS g
+        LEFT JOIN genres AS gen ON g.genre_id = gen.id
+        LEFT JOIN developers AS d ON g.developer_id = d.id
+        LEFT JOIN game_platforms AS gp ON g.id = gp.game_id
+        LEFT JOIN platforms AS p ON gp.platform_id = p.id
         GROUP BY g.id, g.title, g.price, g.rating, g.release_year, g.image_url, gen.genre_name, d.developer_name
         ORDER BY g.id
         `)
@@ -36,11 +36,11 @@ async function getSearchedGame(search) {
             gen.genre_name,
             d.developer_name,
             ARRAY_AGG(p.platform_name ORDER BY p.platform_name) AS platforms
-        FROM games g
-        LEFT JOIN genres gen ON g.genre_id = gen.id
-        LEFT JOIN developers d ON g.developer_id = d.id
-        LEFT JOIN game_platforms gp ON g.id = gp.game_id
-        LEFT JOIN platforms p ON gp.platform_id = p.id
+        FROM games AS g
+        LEFT JOIN genres AS gen ON g.genre_id = gen.id
+        LEFT JOIN developers AS d ON g.developer_id = d.id
+        LEFT JOIN game_platforms AS gp ON g.id = gp.game_id
+        LEFT JOIN platforms AS p ON gp.platform_id = p.id
         WHERE g.title ILIKE $1 
             OR gen.genre_name ILIKE $1 
             OR d.developer_name ILIKE $1
@@ -48,6 +48,30 @@ async function getSearchedGame(search) {
         ORDER BY g.title
     `, [`%${search}%`])
     return rows
+}
+
+async function getGameByID(id) {
+    const {rows} = await pool.query(`
+        SELECT
+            g.id,
+            g.title,
+            g.price,
+            g.rating,
+            g.release_year,
+            g.image_url,
+            gen.genre_name,
+            d.developer_name,
+            ARRAY_AGG(p.platform_name ORDER BY p.platform_name) AS platforms
+        FROM games AS g
+        LEFT JOIN genres AS gen ON g.genre_id = gen.id
+        LEFT JOIN developers AS d ON g.developer_id = d.id
+        LEFT JOIN game_platforms AS gp ON g.id = gp.game_id
+        LEFT JOIN platforms AS p ON gp.platform_id = p.id
+        WHERE g.id = $1
+        GROUP BY g.id, g.title, g.price, g.rating, g.release_year, g.image_url, gen.genre_name, d.developer_name
+        `, [id])
+    
+        return rows[0]
 }
 
 async function insertNewGame(data) {
@@ -125,11 +149,11 @@ async function insertNewGame(data) {
                 gen.genre_name,
                 d.developer_name,
                 ARRAY_AGG(p.platform_name ORDER BY p.platform_name) AS platforms
-            FROM games g
-            LEFT JOIN genres gen ON g.genre_id = gen.id
-            LEFT JOIN developers d ON g.developer_id = d.id
-            LEFT JOIN game_platforms gp ON g.id = gp.game_id
-            LEFT JOIN platforms p ON gp.platform_id = p.id
+            FROM games AS g
+            LEFT JOIN genres AS gen ON g.genre_id = gen.id
+            LEFT JOIN developers AS d ON g.developer_id = d.id
+            LEFT JOIN game_platforms AS gp ON g.id = gp.game_id
+            LEFT JOIN platforms AS p ON gp.platform_id = p.id
             WHERE g.id = $1
             GROUP BY g.id, g.title, g.price, g.rating, g.release_year, g.image_url, gen.genre_name, d.developer_name`
             , [gameID])
@@ -146,5 +170,6 @@ async function insertNewGame(data) {
 module.exports = {
     getAllGames,
     getSearchedGame,
-    insertNewGame
+    insertNewGame,
+    getGameByID
 }
