@@ -167,9 +167,50 @@ async function insertNewGame(data) {
     }
 }
 
+async function updateGame(id, updates){
+    const client = await pool.connect()
+
+    try {
+        await client.query('BEGIN')
+
+        // Dynamic update query for only fields being updated
+
+        const updateFields = []
+        const values = []
+        let count = 1
+
+        for (const [key, value] of Object.entries(updates)) {
+            updateFields.push(`${key} = $${count}`)
+            values.push(value)
+            count++
+        }
+
+        values.push(id)
+
+        const updateQuery = `
+            UPDATE games
+            SET ${updateFields.join(', ')}
+            WHERE id = $${count}
+            RETURNING *
+        `
+
+        await client.query(updateQuery, values)
+
+        await client.query('COMMIT')
+
+        return await getGameByID(id)
+    } catch(err){
+        await client.query('ROLLBACK')
+        throw err
+    } finally {
+        client.release()
+    }
+}
+
 module.exports = {
     getAllGames,
     getSearchedGame,
     insertNewGame,
-    getGameByID
+    getGameByID,
+    updateGame
 }
