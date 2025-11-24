@@ -13,6 +13,7 @@ export default function Homepage(){
     const handleSearch = (event) => {
         event.preventDefault()
         searchGame(searchQuery)
+        setSearchQuery('')
     }
     
     return(
