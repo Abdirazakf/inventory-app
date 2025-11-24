@@ -10,6 +10,9 @@ export const useGameStore = create((set) => ({
     gameList: [],
     loading: false,
     error: null,
+    searchQuery: '',
+
+    setSearchQuery: (query) => set({searchQuery: query}),
 
     fetchGames: async() => {
         set({loading: true})
@@ -29,8 +32,37 @@ export const useGameStore = create((set) => ({
             set({loading: false})
         }
     },
+    
+    searchGame: async (query) => {
+        if (!query || query.trim() === '') {
+            toast.error('Please enter a search term')
+            return
+        }
 
-    deleteGame: async(id) => {
+        set({loading: true})
+        const encodedQuery = encodeURIComponent(query)
+
+        try {
+            const response = await axios.get(`${BASE_URL}/search?q=${encodedQuery}`)
+            set({gameList: response.data.results, error: null})
+            
+            const count = response.data.count || response.data.results.length
+
+            if (count > 0){
+                toast.success(`Found ${count} game(s)`)
+            } else {
+                toast.error('No games found')
+            }
+        } catch(err){
+            console.log('Failed to search game:', err)
+            set({error: 'Failed to search game'})
+            toast.error('Failed to Search Game')
+        } finally {
+            set({loading: false})
+        }
+    },
+
+    deleteGame: async (id) => {
         set({loading: true})
 
         try {
