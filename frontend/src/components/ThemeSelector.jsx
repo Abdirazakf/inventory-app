@@ -4,8 +4,7 @@ import { useThemeStore } from "../states/useThemeStore";
 
 export default function ThemeSelector(){
     const {currentTheme, setTheme} = useThemeStore()
-    console.log(currentTheme)
-    
+        
     return(
         <div className="dropdown dropdown-end">
 
