@@ -23,6 +23,12 @@ export const useGameStore = create((set) => ({
         }
     })),
 
+    clearCurrentGame: () => set({
+        currentGame: null,
+        formData: {},
+        error: null
+    }),
+
     fetchGames: async() => {
         set({loading: true})
 

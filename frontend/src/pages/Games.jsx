@@ -7,6 +7,7 @@ import { ArrowLeftIcon, SaveIcon, Trash2Icon } from "lucide-react"
 export default function Games(){
     const {
         currentGame,
+        clearCurrentGame,
         formData,
         setFormData,
         loading,
@@ -20,7 +21,11 @@ export default function Games(){
 
     useEffect(() => {
         getCurrentGame(id)
-    }, [getCurrentGame, id])
+
+        return () => {
+            clearCurrentGame()
+        }
+    }, [id, getCurrentGame, clearCurrentGame])
 
     const handleDelete = async () => {
         if (window.confirm("Are you sure you want to delete this game?")){
