@@ -1,11 +1,8 @@
-import {Link, useResolvedPath} from "react-router-dom"
+import {Link} from "react-router-dom"
 import {GamepadDirectional, ShoppingBagIcon} from "lucide-react"
 import ThemeSelector from "./ThemeSelector"
 
 export default function Navbar(){
-    const {pathname} = useResolvedPath()
-    const isHomepage = pathname === "/"
-
     return( <div className="bg-base-100/80 backdrop-blur-lg border-b border-base-content/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto">
             <div className="navbar px-4 min-h-[4rem] justify-between">
@@ -23,14 +20,6 @@ export default function Navbar(){
 
                 <div className="flex items-center gap-4">
                     <ThemeSelector/>
-                    {isHomepage  && (
-                        <div className="indicator">
-                            <ShoppingBagIcon className="size-5" />
-                            <span className="badge badge-sm badge-primary indicator-item">
-                                8
-                            </span>
-                        </div>
-                    )}
                 </div>
             </div>
         </div>
