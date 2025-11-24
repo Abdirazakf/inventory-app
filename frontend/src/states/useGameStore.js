@@ -15,7 +15,13 @@ export const useGameStore = create((set) => ({
     formData: {},
 
     setSearchQuery: (query) => set({searchQuery: query}),
-    setFormData: (formData) => set({formData}),
+
+    setFormData: (field, value) => set((state) => ({
+        formData: {
+            ...state.formData,
+            [field]: value
+        }
+    })),
 
     fetchGames: async() => {
         set({loading: true})
@@ -80,25 +86,59 @@ export const useGameStore = create((set) => ({
             set({loading: false})
         }
     },
-
-    updateGame: async (id, updates) => {
+    
+    updateGame: async (id) => {
         set({loading: true})
-
+        
         try {
+            const state = useGameStore.getState()
+            const {formData} = state
+
+            const updates = {}
+
+            // Only include fields that have values
+            if (formData.title.trim()) {
+                updates.title = formData.title.trim()
+            }
+            if (formData.price !== '' && formData.price !== null) {
+                updates.price = parseFloat(formData.price)
+            }
+            if (formData.genre_name.trim()) {
+                updates.genre_name = formData.genre_name.trim()
+            }
+            if (formData.developer_name.trim()) {
+                updates.developer_name = formData.developer_name.trim()
+            }
+            if (formData.release_year) {
+                updates.release_year = parseInt(formData.release_year)
+            }
+            if (formData.rating != null && formData.rating !== '') {
+                updates.rating = parseFloat(formData.rating)
+            }
+
+            if (Object.keys(updates).length === 0){
+                toast.error('No changes to update')
+                set({loading: false})
+                return
+            }
+
             const response = await axios.patch(`${BASE_URL}/${id}`, updates)
-            set({currentGame: response.data})
+            const updatedGame = response.data.game
+            
+            set(() => ({
+                currentGame: updatedGame,
+                formData: updatedGame
+            }))
 
             toast.success('Game updated successfully')
-            return response.data
         } catch(err) {
             console.log('Failed to update game:', err)
-            
+        
             if (err.response.data.error) {
                 toast.error(err.response.data.error)
             } else {
                 toast.error('Failed to update game')
             }
-
             throw err
         } finally {
             set({loading: false})
@@ -111,7 +151,7 @@ export const useGameStore = create((set) => ({
         try {
             await axios.delete(`${BASE_URL}/${id}`)
             set(prev => ({gameList: prev.gameList.filter(game => game.id !== id)}))
-            toast.success('Product deleted successfully')
+            toast.success('Game deleted successfully')
         } catch(err){
             console.log('Error delete game:',err)
             toast.error('Failed to delete game')
