@@ -10,9 +10,12 @@ export const useGameStore = create((set) => ({
     gameList: [],
     loading: false,
     error: null,
+    currentGame : null,
     searchQuery: '',
+    formData: {},
 
     setSearchQuery: (query) => set({searchQuery: query}),
+    setFormData: (formData) => set({formData}),
 
     fetchGames: async() => {
         set({loading: true})
@@ -57,6 +60,46 @@ export const useGameStore = create((set) => ({
             console.log('Failed to search game:', err)
             set({error: 'Failed to search game'})
             toast.error('Failed to Search Game')
+        } finally {
+            set({loading: false})
+        }
+    },
+
+    getCurrentGame: async (id) => {
+        set({loading: true})
+
+        try {
+            const response = await axios.get(`${BASE_URL}/${id}`)
+            set({currentGame: response.data, error: null,
+                formData: response.data
+            })
+        } catch(err) {
+            console.log("Couldn't get game details:",err)
+            toast.error("Couldn't Game Details")
+        } finally {
+            set({loading: false})
+        }
+    },
+
+    updateGame: async (id, updates) => {
+        set({loading: true})
+
+        try {
+            const response = await axios.patch(`${BASE_URL}/${id}`, updates)
+            set({currentGame: response.data})
+
+            toast.success('Game updated successfully')
+            return response.data
+        } catch(err) {
+            console.log('Failed to update game:', err)
+            
+            if (err.response.data.error) {
+                toast.error(err.response.data.error)
+            } else {
+                toast.error('Failed to update game')
+            }
+
+            throw err
         } finally {
             set({loading: false})
         }
