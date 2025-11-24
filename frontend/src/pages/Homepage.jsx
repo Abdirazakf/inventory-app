@@ -1,22 +1,32 @@
 import { useEffect } from "react"
 import { useGameStore } from "../states/useGameStore"
-import {PackageIcon, PlusCircleIcon, RefreshCwIcon} from "lucide-react"
+import {PackageIcon, RefreshCwIcon, SearchIcon} from "lucide-react"
 import GameCard from '../components/GameCard'
 
 export default function Homepage(){
-    const {gameList, loading, error, fetchGames} = useGameStore()
+    const {gameList, loading, error, fetchGames, searchQuery, setSearchQuery, searchGame} = useGameStore()
 
     useEffect(() => {
         fetchGames()
     }, [fetchGames])
+
+    const handleSearch = (event) => {
+        event.preventDefault()
+        searchGame(searchQuery)
+    }
     
     return(
         <main className="max-w-6xl mx-auto px-4 py-8">
             <div className="flex justify-between items-center mb-8">
-                <button className="btn btn-primary">
-                    <PlusCircleIcon className="size-5 mr-2" />
-                    Add Game
-                </button>
+                <form onSubmit={handleSearch} className="flex-1 flex gap-2">
+                    <button type="submit" className="btn btn-primary">
+                        <SearchIcon className="size-5 mr-2" />
+                        Search Game
+                    </button>
+
+                    <input type="text" placeholder="Enter Game Title" className="input input-bordered flex-1"
+                    value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                </form>
                 <button className="btn btn-ghost btn-circle" onClick={fetchGames}>
                     <RefreshCwIcon className="size-5"/>
                 </button>
