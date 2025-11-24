@@ -8,7 +8,8 @@ const priceErr = 'Price must be positive number'
 const ratingErr = 'Rating must be between 0 and 10'
 const yearErr = 'Release year must be valid'
 const imageErr = 'Image URL must be valid'
-
+const genreErr = 'Genre must be between 1 and 100 characters'
+const devErr = 'Developer must be between 1 and 255 characters'
 const validateSearch = [
     query('q').trim()
     .isLength({min: 1, max: 255})
@@ -32,7 +33,13 @@ const validateUpdate = [
     .withMessage(yearErr),
     body('image_url').optional()
     .isURL()
-    .withMessage(imageErr)
+    .withMessage(imageErr),
+    body('genre_name').optional().trim()
+    .isLength({min: 1, max: 100})
+    .withMessage(genreErr),
+    body('developer_name').optional().trim()
+    .isLength({min: 1, max: 255})
+    .withMessage(devErr)
 ]
 
 exports.gameListGet =  async (req, res) => {
@@ -142,61 +149,40 @@ exports.gameUpdate = [
         const id = req.params.id
         const updates = req.body
 
+        // Clean updates - remove undefined and empty string values
         const cleanUpdates = Object.entries(updates).reduce((acc, [key, value]) => {
-            if (value !== undefined && value !== ''){
+            if (value !== undefined && value !== '' && value !== null) {
                 acc[key] = value
             }
             return acc
         }, {})
 
+        // Check if there are any updates to apply
         if (Object.keys(cleanUpdates).length === 0) {
             return res.status(400).json({
-                error: 'No valid updates provided'
+                error: 'No valid updates provided',
+                message: 'Please provide at least one field to update'
             })
         }
 
         try {
+            // Verify game exists
             const currentGame = await db.getGameByID(id)
 
-            if (!currentGame){
+            if (!currentGame) {
                 return res.status(404).json({
                     error: 'Game not found',
                     id: id
                 })
             }
 
-            const allowedUpdates = {}
-            const blockedUpdates = []
-
-            for (const [key, value] of Object.entries(cleanUpdates)) {
-                if (currentGame[key] === null || currentGame[key] === undefined) {
-                    allowedUpdates[key] = value
-                } else {
-                    blockedUpdates.push(key)
-                }
-            }
-
-            if (Object.keys(allowedUpdates).length === 0){
-                return res.status(400).json({
-                    error: 'No null fields to update',
-                    message: 'Only null values can be updated',
-                    blockedFields: blockedUpdates,
-                    currentValues: blockedUpdates.reduce((acc, key) => {
-                        acc[key] = currentGame[key]
-                        return acc
-                    }, {})
-                })
-            }
-
-            const updatedGame = await db.updateGame(id, allowedUpdates)
+            const updatedGame = await db.updateGame(id, cleanUpdates)
 
             res.json({
                 message: 'Game updated successfully',
-                updated: allowedUpdates,
-                blocked: blockedUpdates.length > 0 ? blockedUpdates : undefined,
                 game: updatedGame
             })
-        } catch(err){
+        } catch(err) {
             console.error('Error updating game:', err)
             res.status(500).json({
                 error: 'Failed to update game',

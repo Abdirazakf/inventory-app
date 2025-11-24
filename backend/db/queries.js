@@ -173,28 +173,85 @@ async function updateGame(id, updates){
     try {
         await client.query('BEGIN')
 
-        // Dynamic update query for only fields being updated
+        let genreID = null
+        let developerID = null
+
+        // Handle genre update
+        if (updates.genre_name) {
+            const genre = await client.query(
+                `INSERT INTO genres (genre_name)
+                VALUES ($1)
+                ON CONFLICT (genre_name) DO UPDATE SET genre_name = EXCLUDED.genre_name
+                RETURNING id`,
+                [updates.genre_name]
+            )
+            genreID = genre.rows[0].id
+        }
+
+        // Handle developer update
+        if (updates.developer_name) {
+            const developer = await client.query(
+                `INSERT INTO developers (developer_name)
+                VALUES ($1)
+                ON CONFLICT (developer_name) DO UPDATE SET developer_name = EXCLUDED.developer_name
+                RETURNING id`,
+                [updates.developer_name]
+            )
+            developerID = developer.rows[0].id
+        }
 
         const updateFields = []
         const values = []
         let count = 1
 
-        for (const [key, value] of Object.entries(updates)) {
-            updateFields.push(`${key} = $${count}`)
-            values.push(value)
+        // Add direct game fields
+        if (updates.title !== undefined) {
+            updateFields.push(`title = $${count}`)
+            values.push(updates.title)
+            count++
+        }
+        if (updates.price !== undefined) {
+            updateFields.push(`price = $${count}`)
+            values.push(updates.price)
+            count++
+        }
+        if (updates.rating !== undefined) {
+            updateFields.push(`rating = $${count}`)
+            values.push(updates.rating)
+            count++
+        }
+        if (updates.release_year !== undefined) {
+            updateFields.push(`release_year = $${count}`)
+            values.push(updates.release_year)
+            count++
+        }
+        if (updates.image_url !== undefined) {
+            updateFields.push(`image_url = $${count}`)
+            values.push(updates.image_url)
             count++
         }
 
-        values.push(id)
+        if (genreID !== null) {
+            updateFields.push(`genre_id = $${count}`)
+            values.push(genreID)
+            count++
+        }
+        if (developerID !== null) {
+            updateFields.push(`developer_id = $${count}`)
+            values.push(developerID)
+            count++
+        }
 
-        const updateQuery = `
-            UPDATE games
-            SET ${updateFields.join(', ')}
-            WHERE id = $${count}
-            RETURNING *
-        `
-
-        await client.query(updateQuery, values)
+        if (updateFields.length > 0) {
+            values.push(id)
+            const updateQuery = `
+                UPDATE games
+                SET ${updateFields.join(', ')}
+                WHERE id = $${count}
+                RETURNING *
+            `
+            await client.query(updateQuery, values)
+        }
 
         await client.query('COMMIT')
 
