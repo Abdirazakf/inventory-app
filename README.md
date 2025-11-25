@@ -6,6 +6,8 @@ A full-stack game inventory management system built with PostgreSQL, Express.js,
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)
 ![React](https://img.shields.io/badge/react-19.2.0-blue.svg)
 
+Live Page: https://inventory-app-pykr.onrender.com/ 
+
 ## 🎮 Features
 
 - **Search & Discovery**: Search for games with intelligent database-first lookup and automatic API fallback
@@ -332,3 +334,4 @@ This project is licensed under the ISC License.
 ---
 
 **Built with ❤️ using the PERN Stack**
+
